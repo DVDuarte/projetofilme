@@ -34,6 +34,10 @@ public class Autor {
 
     private String website;
 
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
+    private List<Filme> filmes;
+
+
     public Long getId() {
         return id;
     }
@@ -74,4 +78,11 @@ public class Autor {
         this.website = website;
     }
 
+    public List<Filme> getFilmes() {
+        return filmes;
+    }
+
+    public void setFilmes(List<Filme> filmes) {
+        this.filmes = filmes;
+    }
 }
